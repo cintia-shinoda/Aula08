@@ -8,16 +8,16 @@ public static final int TAMANHO_CARRINHO = 5;
 		double[] carrinho = new double[TAMANHO_CARRINHO];
 		int opcao = 0;
 		String usuario, senha;
-		System.out.println("Para entrar no sistema você deve informar seu usuário e sua senha");
-		System.out.println("Digite seu usuário");
+		System.out.println("Para entrar no sistema vocÃª deve informar seu usuÃ¡rio e sua senha");
+		System.out.println("Digite seu usuÃ¡rio");
 		usuario = leitor.next();
 		System.out.println("Digite sua senha");
 		senha = leitor.next();
 
-		if(usuario.equalsIgnoreCase("COMPRADOR") && senha.equals("123")){
+		if(Funcoes.login(usuario, senha)){
 			System.out.println("Login bem sucedido!");
 		}else {
-			System.out.println("Usuário ou senha incorretos.");
+			System.out.println("UsuÃ¡rio ou senha incorretos.");
 			System.exit(1);
 		}
 		
@@ -29,15 +29,15 @@ public static final int TAMANHO_CARRINHO = 5;
 			
 			switch(opcao) {
 			case 1:
-				System.out.println("Você deverá digitar cada um dos " + carrinho.length + " preços de produtos do carrinho");
+				System.out.println("VocÃª deverÃ¡ digitar cada um dos " + carrinho.length + " preÃ§os de produtos do carrinho");
 				for(int i=0;i<carrinho.length;i++) {
-					System.out.println("Digite o " + (i+1) + "º dos " + carrinho.length + " preços de produto do carrinho");
+					System.out.println("Digite o " + (i+1) + "Âº dos " + carrinho.length + " preÃ§os de produto do carrinho");
 					carrinho[i] = leitor.nextDouble();
 				}
 				break;
 				
 			case 2:
-				Funcoes.somarCarrinho(carrinho);
+				System.out.println("R$" + Funcoes.somarCarrinho(carrinho));
 				break;
 				
 			case 3:
@@ -45,7 +45,7 @@ public static final int TAMANHO_CARRINHO = 5;
 				break;
 				
 			default:
-				System.out.println("Opção inválida, por favor selecione outra opção");
+				System.out.println("OpÃ§Ã£o invÃ¡lida, por favor selecione outra opÃ§Ã£o");
 				break;
 				
 			}
